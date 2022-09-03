@@ -10,6 +10,12 @@ commandaction="Updating"
 functionselfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 fn_firstcommand_set
 
+alert="updates"
+alert.sh
+
+sleep 2m
+
+
 fn_print_dots ""
 check.sh
 core_logs.sh
@@ -36,5 +42,7 @@ elif [ "${shortname}" == "vints" ]; then
 else
 	update_steamcmd.sh
 fi
+alert="updatef"
+alert.sh
 
 core_exit.sh
