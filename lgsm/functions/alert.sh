@@ -37,8 +37,8 @@ fn_alert_test(){
 }
 
 fn_alert_restart(){
-	fn_script_log_info "Sending alert: Restarted: ${executable} not running"
-	alertsubject="Alert - ${selfname} - Restarted"
+	fn_script_log_info "Sending alert: Restarted in 2min : ${executable} not running"
+	alertsubject="Alert - ${selfname} - Restarted in 2min "
 	alertemoji="🚨"
 	alertsound="2"
 	alerturl="not enabled"
@@ -55,8 +55,8 @@ fn_alert_maintenance(){
 }
 
 fn_alert_maintenancef(){
-	fn_script_log_info "Sending alert: Maintance Finished server start"
-	alertsubject="Alert - ${selfname} - Maintance  Finished server start "
+	fn_script_log_info "Sending alert: Maintance Finished Server start"
+	alertsubject="Alert - ${selfname} - Maintance Finished Server start "
 	alertemoji="🎮"
 	alertsound="1"
 	alerturl="not enabled"
@@ -72,6 +72,26 @@ fn_alert_restart_query(){
 	alertbody="Unable to query: ${selfname}"
 }
 
+fn_alert_start(){
+	fn_script_log_info "Sending alert: Started pls wait 10 min"
+	alertsubject="Alert - ${selfname} - Started  pls wait 10 min"
+	alertemoji="🚨"
+	alertsound="1"
+	alerturl="not enabled"
+	alertbody="${gamename} received started pls wait 10 min"
+}
+
+
+fn_alert_startfull(){
+	fn_script_log_info "Sending alert: Server on "
+	alertsubject="Alert - ${selfname} - Server on "
+	alertemoji="🎮"
+	alertsound="1"
+	alerturl="not enabled"
+	alertbody="${gamename} received Server on"
+}
+
+
 fn_alert_update(){
 	fn_script_log_info "Sending alert: Updated"
 	alertsubject="Alert - ${selfname} - Updated"
@@ -80,6 +100,25 @@ fn_alert_update(){
 	alerturl="not enabled"
 	alertbody="${gamename} received update"
 }
+
+fn_alert_updates(){
+	fn_script_log_info "Sending alert: Update start in 2 min"
+	alertsubject="Alert - ${selfname} - Update start in 2 min"
+	alertemoji="🚨"
+	alertsound="1"
+	alerturl="not enabled"
+	alertbody="${gamename} received Update start in 2min"
+}
+
+fn_alert_updatef(){
+	fn_script_log_info "Sending alert: Update Finished Server on "
+	alertsubject="Alert - ${selfname} - Update Finished Server on "
+	alertemoji="🎮"
+	alertsound="1"
+	alerturl="not enabled"
+	alertbody="${gamename} received Update Finished Server on  "
+}
+
 
 fn_alert_check_update(){
 	fn_script_log_info "Sending alert: Update available"
@@ -118,6 +157,10 @@ elif [ "${alert}" == "test" ]; then
 	fn_alert_test
 elif [ "${alert}" == "update" ]; then
 	fn_alert_update
+elif [ "${alert}" == "updates" ]; then
+	fn_alert_updates
+elif [ "${alert}" == "updatef" ]; then
+	fn_alert_updatef
 elif [ "${alert}" == "check-update" ]; then
 	fn_alert_check_update
 elif [ "${alert}" == "config" ]; then
@@ -126,6 +169,10 @@ elif [ "${alert}" == "maintenance" ]; then
 	fn_alert_maintance
 elif [ "${alert}" == "maintenancef" ]; then
 	fn_alert_maintancef
+elif [ "${alert}" == "start" ]; then
+	fn_alert_start
+elif [ "${alert}" == "startfull" ]; then
+	fn_alert_startfull
 fi
 
 # Generate alert log.
