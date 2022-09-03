@@ -46,20 +46,20 @@ fn_alert_restart(){
 }
 
 fn_alert_backups(){
-	fn_script_log_info "Sending alert: Backup start in 2min"
-	alertsubject="Alert - ${selfname} - Backup start in 2min"
+	fn_script_log_info "Sending alert: Backup start in 2min server offline until finished "
+	alertsubject="Alert - ${selfname} - server offline until finished"
 	alertemoji="🚧"
 	alertsound="1"
 	alerturl="not enabled"
-	alertbody="${gamename} received Backup start in 2min"
+	alertbody="${gamename} received Backup start in 2min server offline until finished"
 }
 fn_alert_backupsf(){
-	fn_script_log_info "Sending alert: Backup Finished"
-	alertsubject="Alert - ${selfname} - Backup Finished"
+	fn_script_log_info "Sending alert: Backup Finished Server on "
+	alertsubject="Alert - ${selfname} - Backup Finished Server on"
 	alertemoji="🎮"
 	alertsound="1"
 	alerturl="not enabled"
-	alertbody="${gamename} received Backup Finished"
+	alertbody="${gamename} received Backup Server on"
 }
 
 fn_alert_maintenance(){
