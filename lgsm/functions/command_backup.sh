@@ -253,7 +253,7 @@ fn_backup_relpath() {
 fn_backup_start_server(){
 	if [ -n "${startserver}" ]; then
 		exitbypass=1
-		command_start.sh
+		command_startb.sh
 		fn_firstcommand_reset
 	fi
 }
