@@ -10,6 +10,9 @@ commandaction="Starting"
 functionselfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 fn_firstcommand_set
 
+alert="maintenancef"
+alert.sh
+
 fn_start_teamspeak3(){
 	if [ ! -f "${servercfgfullpath}" ]; then
 		fn_print_warn_nl "${servercfgfullpath} is missing"
@@ -211,5 +214,9 @@ elif [ "${shortname}" == "jk2" ]; then
 else
 	fn_start_tmux
 fi
+
+sleep 10m
+alert="startfull"
+alert.sh
 
 core_exit.sh
