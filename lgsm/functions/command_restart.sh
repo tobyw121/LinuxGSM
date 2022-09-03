@@ -10,9 +10,14 @@ commandaction="Restarting"
 functionselfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 fn_firstcommand_set
 
+alert="restart"
+alert.sh
+
+sleep 2m
+
 info_game.sh
 exitbypass=1
-command_stop.sh
-command_start.sh
+command_stopna.sh
+command_startna.sh
 fn_firstcommand_reset
 core_exit.sh
