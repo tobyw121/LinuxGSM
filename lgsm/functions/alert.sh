@@ -45,7 +45,7 @@ fn_alert_restart(){
 	alertbody="${selfname} ${executable} not running"
 }
 
-fn_alert_maintance(){
+fn_alert_maintenance(){
 	fn_script_log_info "Sending alert: Maintance in 2min"
 	alertsubject="Alert - ${selfname} - Maintance in 2min"
 	alertemoji="🚧"
@@ -54,7 +54,7 @@ fn_alert_maintance(){
 	alertbody="${gamename} received Maintance in 2min"
 }
 
-fn_alert_maintancef(){
+fn_alert_maintenancef(){
 	fn_script_log_info "Sending alert: Maintance Finished server start"
 	alertsubject="Alert - ${selfname} - Maintance  Finished server start "
 	alertemoji="🎮"
@@ -122,6 +122,10 @@ elif [ "${alert}" == "check-update" ]; then
 	fn_alert_check_update
 elif [ "${alert}" == "config" ]; then
 	fn_alert_config
+elif [ "${alert}" == "maintenance" ]; then
+	fn_alert_maintance
+elif [ "${alert}" == "maintenancef" ]; then
+	fn_alert_maintancef
 fi
 
 # Generate alert log.
