@@ -45,6 +45,24 @@ fn_alert_restart(){
 	alertbody="${selfname} ${executable} not running"
 }
 
+fn_alert_maintance(){
+	fn_script_log_info "Sending alert: Maintance in 2min"
+	alertsubject="Alert - ${selfname} - Maintance in 2min"
+	alertemoji="🚧"
+	alertsound="1"
+	alerturl="not enabled"
+	alertbody="${gamename} received Maintance in 2min"
+}
+
+fn_alert_maintancef(){
+	fn_script_log_info "Sending alert: Maintance Finished server start"
+	alertsubject="Alert - ${selfname} - Maintance  Finished server start "
+	alertemoji="🎮"
+	alertsound="1"
+	alerturl="not enabled"
+	alertbody="${gamename} received Maintance in 2min"
+}
+
 fn_alert_restart_query(){
 	fn_script_log_info "Sending alert: Restarted: ${selfname}"
 	alertsubject="Alert - ${selfname} - Restarted"
