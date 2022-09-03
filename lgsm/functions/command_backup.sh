@@ -10,6 +10,11 @@ commandaction="Backing up"
 functionselfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 fn_firstcommand_set
 
+alert="backups"
+alert.sh
+
+sleep 2m
+
 check.sh
 
 # Trap to remove lockfile on quit.
@@ -76,7 +81,7 @@ fn_backup_stop_server(){
 		fn_print_restart_warning
 		startserver="1"
 		exitbypass=1
-		command_stop.sh
+		command_stopb.sh
 		fn_firstcommand_reset
 	fi
 }
@@ -263,5 +268,8 @@ fn_backup_create_lockfile
 fn_backup_compression
 fn_backup_prune
 fn_backup_start_server
+
+alert="backupsf"
+alert.sh
 
 core_exit.sh
