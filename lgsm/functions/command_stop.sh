@@ -10,6 +10,12 @@ commandaction="Stopping"
 functionselfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 fn_firstcommand_set
 
+alert="maintenance"
+alert.sh
+
+sleep 2m
+
+
 # Attempts graceful shutdown by sending 'CTRL+c'.
 fn_stop_graceful_ctrlc(){
 	fn_print_dots "Graceful: CTRL+c"
