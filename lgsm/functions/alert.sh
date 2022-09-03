@@ -45,6 +45,23 @@ fn_alert_restart(){
 	alertbody="${selfname} ${executable} not running"
 }
 
+fn_alert_backups(){
+	fn_script_log_info "Sending alert: Backup start in 2min"
+	alertsubject="Alert - ${selfname} - Backup start in 2min"
+	alertemoji="🚧"
+	alertsound="1"
+	alerturl="not enabled"
+	alertbody="${gamename} received Backup start in 2min"
+}
+fn_alert_backupsf(){
+	fn_script_log_info "Sending alert: Backup Finished"
+	alertsubject="Alert - ${selfname} - Backup Finished"
+	alertemoji="🎮"
+	alertsound="1"
+	alerturl="not enabled"
+	alertbody="${gamename} received Backup Finished"
+}
+
 fn_alert_maintenance(){
 	fn_script_log_info "Sending alert: Maintance in 2min"
 	alertsubject="Alert - ${selfname} - Maintance in 2min"
@@ -161,6 +178,10 @@ elif [ "${alert}" == "updates" ]; then
 	fn_alert_updates
 elif [ "${alert}" == "updatef" ]; then
 	fn_alert_updatef
+elif [ "${alert}" == "backups" ]; then
+	fn_alert_backups
+elif [ "${alert}" == "backupsf" ]; then
+	fn_alert_backupsf
 elif [ "${alert}" == "check-update" ]; then
 	fn_alert_check_update
 elif [ "${alert}" == "config" ]; then
