@@ -166,7 +166,7 @@ elif [ "${alert}" == "check-update" ]; then
 elif [ "${alert}" == "config" ]; then
 	fn_alert_config
 elif [ "${alert}" == "maintenance" ]; then
-	fn_alert_maintance
+	fn_alert_maintenance
 elif [ "${alert}" == "maintenancef" ]; then
 	fn_alert_maintancef
 elif [ "${alert}" == "start" ]; then
